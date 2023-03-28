@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """ defines a square """
 
 
@@ -25,7 +24,6 @@ class Square:
         """
         finds area of square
         Returns:
-            the area of the square
+        the area of the square
         """
-
         return self.__size ** 2
