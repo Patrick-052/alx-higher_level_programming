@@ -72,10 +72,6 @@ class Rectangle:
                 rect.append("\n")
         return ("".join(rect))
 
-    """ a function to return the string
-    representation of the rectangle"""
     def __repr__(self):
-        return ("Rectangle({}, {})".format(self.__width, self.__height))  
-
-    def __del__(self):
-        print("Bye rectangle...")
+        """ return the string reoresentation of the rectangle"""
+        return ("Rectangle({}, {})".format(self.__width, self.__height))
