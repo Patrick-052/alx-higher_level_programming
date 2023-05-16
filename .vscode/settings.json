@@ -1,0 +1,4 @@
+{
+    "terminal.integrated.altClickMovesCursor": false,
+    "python.analysis.typeCheckingMode": "off"
+}
