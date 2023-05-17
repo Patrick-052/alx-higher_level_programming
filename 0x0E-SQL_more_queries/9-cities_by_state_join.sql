@@ -2,4 +2,4 @@
 SELECT cities.id, cities.name, states.name
 FROM hbtn_0d_usa.cities
 JOIN hbtn_0d_usa.states ON cities.states.id = states.id
-ORDER BY cities.id;
+ORDER BY cities.id Asc;
