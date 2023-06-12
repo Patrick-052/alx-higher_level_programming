@@ -6,7 +6,7 @@ if (Number.isInteger(num)) {
   for (let i = 0; i < num; i++) {
     const row = [];
     for (let j = 0; j < num; j++) {
-      row.push('x');
+      row.push('X');
     }
     console.log(row.join(''));
   }
