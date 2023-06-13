@@ -1,5 +1,11 @@
 #!/usr/bin/node
+
 exports.nbOccurences = function (list, searchElement) {
-  const count = list.filter((element) => element === searchElement).length;
-  console.log(count);
+  const count = list.reduce((accumulator, element) => {
+    if (element === searchElement) {
+      accumulator += 1;
+    }
+    return accumulator;
+  }, 0);
+  return count;
 };
