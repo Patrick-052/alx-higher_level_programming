@@ -11,12 +11,11 @@ import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    cs = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
-    c = cs.cursor()
-    c.execute("""SELECT cities.name FROM cities
-              JOIN states ON cities.state_id = states.id
-              WHERE states.name LIKE binary %s
-              ORDER BY cities.id ASC""", (argv[4],))
-    qr = c.fetchall()
-    [print(r[0], end='' if i == len(qr) - 1 else ', ')
-     for i, r in enumerate(qr)]
+    cd = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
+    c = cd.cursor()
+    c.execute("""SELECT * FROM cities
+              INNER JOIN states ON cities.state_id = states.id
+              ORDER BY cities.id ASC""")
+    print(", ".join([r[2]
+                    for r in c.fetchall()
+                    if r[4] == argv[4]]))
