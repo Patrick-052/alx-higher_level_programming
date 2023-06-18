@@ -16,6 +16,7 @@ if __name__ == "__main__":
     session = session()
     Ls = State("Louisiana")
     session.add(Ls)
+    session.commit()
     states = session.query(State).filter(State.name == Ls.name)\
                     .order_by(State.id).first()
     result = [states.id if states else "Not found"]
