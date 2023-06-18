@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Retrieving all state objects from the database"""
+"""Retrieving one state object from the database"""
 
 from model_state import Base, State
 from sqlalchemy import create_engine
