@@ -14,9 +14,9 @@ if __name__ == "__main__":
 
     session = sessionmaker(bind=engine)
     session = session()
-    Louisiana = State("Louisiana")
-    session.add(Louisiana)
-    states = session.query(State).filter(State.name == Louisiana)\
+    Ls = State("Louisiana")
+    session.add(Ls)
+    states = session.query(State).filter(State.name == Ls.name)\
                     .order_by(State.id).first()
     result = [states.id if states else "Not found"]
     print(result)
