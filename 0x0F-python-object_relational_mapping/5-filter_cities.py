@@ -15,6 +15,7 @@ if __name__ == "__main__":
     c = cs.cursor()
     c.execute("""SELECT cities.name FROM cities
               JOIN states ON cities.state_id = states.id
-              WHERE states.name = %s ORDER BY cities.id ASC""", (argv[4],))
+              WHERE states.name LIKE binary %s
+              ORDER BY cities.id ASC""", (argv[4],))
     qr = c.fetchall()
     [print(r) for r in qr]
