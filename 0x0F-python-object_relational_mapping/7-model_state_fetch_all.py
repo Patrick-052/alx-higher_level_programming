@@ -12,5 +12,5 @@ if __name__ == "__main__":
              pool_pre_ping=True)
     session = sessionmaker(engine)
     session = session()
-    states = session.query(State.id, State.name)
+    states = session.query(State).order_by(State.id)
     [print(state) for state in states]
