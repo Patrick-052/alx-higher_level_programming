@@ -18,4 +18,5 @@ if __name__ == "__main__":
               WHERE states.name LIKE binary %s
               ORDER BY cities.id ASC""", (argv[4],))
     qr = c.fetchall()
-    [print(r) for r in qr]
+    [print(r[0], end='' if i == len(qr) - 1 else ', ')
+     for i, r in enumerate(qr)]
