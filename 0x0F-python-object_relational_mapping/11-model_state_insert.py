@@ -19,5 +19,5 @@ if __name__ == "__main__":
     session.commit()
     states = session.query(State).filter(State.name == Ls.name)\
                     .order_by(State.id).first()
-    result = [states.id if states else "Not found"]
-    print(result)
+    if states:
+        print("{}".format(states.id))
