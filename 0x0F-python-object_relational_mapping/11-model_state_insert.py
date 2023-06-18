@@ -14,10 +14,8 @@ if __name__ == "__main__":
 
     session = sessionmaker(bind=engine)
     session = session()
-    Ls = State("Louisiana")
-    session.add(Ls)
+
+    ls = State("Louisiana")
+    session.add(ls)
     session.commit()
-    states = session.query(State).filter(State.name == Ls.name)\
-                    .order_by(State.id).first()
-    if states:
-        print("{}".format(states.id))
+    print(ls.id)
