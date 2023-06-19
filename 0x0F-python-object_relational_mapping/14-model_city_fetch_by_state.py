@@ -19,4 +19,5 @@ if __name__ == "__main__":
 
     Rt = session.query(State).join(City)\
                 .filter(City.state_id == State.id).order_by(City.id).all()
-    [print("{}: ({}) {}".format(i[1], i[2], i[4])) for i in Rt]
+    [print("{}: ({}) {}".format(i.State.name, i.City.id, i.City.name))
+     for i in Rt]
