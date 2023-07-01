@@ -11,4 +11,4 @@ if __name__ == "__main__":
     if scd >= 400:
         print(f"Error code: {scd}")
     else:
-        print("res.text")
+        print(res.text)
