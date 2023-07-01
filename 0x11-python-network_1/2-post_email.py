@@ -6,10 +6,8 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    email = argv[2]
-    value = {'email': email}
-    data = up.urlencode(value).encode('utf-8')
-    req = ur.Request(argv[1], data)
-    with ur.urlopen(req) as res:
+    value = {'email': argv[2]}
+    data = up.urlencode(value).encode('ascii')
+    with ur.urlopen(argv[1], data) as res:
         ret = res.read().decode('utf-8')
-        print(f"Your email is: {email}")
+        print(ret)
