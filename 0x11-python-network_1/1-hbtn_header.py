@@ -7,5 +7,5 @@ from sys import argv
 
 if __name__ == "__main__":
     with ur.urlopen(argv[1]) as res:
-        header = res.headers['X-Request-Id']
-        print(header)
+        Id = res.headers['X-Request-Id']
+        print(Id)
