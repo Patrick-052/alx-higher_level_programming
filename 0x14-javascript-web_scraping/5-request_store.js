@@ -6,13 +6,4 @@ const request = require('request');
 const fs = require('fs');
 const arg = process.argv;
 
-request(arg[2], (error, response, body) => {
-  if (error) {
-    console.log('Error:', error.message);
-  } else {
-    fs.writeFile(arg[3], body, 'utf-8', (error) => {
-      if (error) throw error;
-      console.log('saved!');
-    });
-  }
-});
+request(arg[2]).pipe(fs.createWriteStream(arg[3]));
