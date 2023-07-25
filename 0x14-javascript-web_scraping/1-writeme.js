@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* Writing to a file=> arg[2], content=> arg[3]*/
+/* Writing to a file=> arg[2], content=> arg[3] */
 
 const fs = require('fs');
 const arg = process.argv;
